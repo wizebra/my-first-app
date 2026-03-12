@@ -29,6 +29,7 @@ h1 {
     
     /* This ensures the card stays centered */
     margin: 20px auto; 
+    text-align: center; /* This centers the H1, P, and the Button */
 }
 
 button {
