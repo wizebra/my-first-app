@@ -6,7 +6,7 @@ body {
     align-items: center;     /* Centers vertically */
     min-height: 100vh;       /* Makes the body at least as tall as the screen */
     background-color: #f0f2f5;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 h1 {
@@ -17,10 +17,10 @@ h1 {
 
 .card {
     /* Use a percentage so it shrinks on small screens */
-    width: 90%; 
+    width: 85%; 
     
     /* Set a limit so it doesn't get awkwardly huge on a desktop */
-    max-width: 400px; 
+    max-width: 380px; 
     
     padding: 2rem;
     background: white;
