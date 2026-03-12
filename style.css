@@ -1,12 +1,12 @@
 body {
-    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Updated Font */
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    min-height: 100vh;       /* Makes the body at least as tall as the screen */
+    background-color: #f0f2f5;
+    font-family: sans-serif;
 }
 
 h1 {
@@ -14,12 +14,21 @@ h1 {
     letter-spacing: -0.02em; /* Makes modern fonts look "tighter" */
 }
 
+
 .card {
-    background: white;
+    /* Use a percentage so it shrinks on small screens */
+    width: 90%; 
+    
+    /* Set a limit so it doesn't get awkwardly huge on a desktop */
+    max-width: 400px; 
+    
     padding: 2rem;
+    background: white;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* This ensures the card stays centered */
+    margin: 20px auto; 
 }
 
 button {
