@@ -39,3 +39,30 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* This only triggers if the screen is 600px wide or smaller */
+@media (max-width: 600px) {
+    body {
+        background-color: #ff9a9e; /* Changes background to a soft red/pink */
+    }
+
+    .card {
+        padding: 1.5rem; /* Slightly less padding to save space on small screens */
+        border-radius: 0; /* Maybe you want square corners on mobile? */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Shrinks the text so it doesn't wrap awkwardly */
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        border: 4px solid #3498db; /* Adds a blue border ONLY on small screens */
+    }
+    
+    p {
+        color: #2c3e50;
+        font-weight: bold;
+    }
+}
