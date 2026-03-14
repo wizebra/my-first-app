@@ -1,12 +1,11 @@
 body {
     margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
-    min-height: 100vh;       /* Makes the body at least as tall as the screen */
-    background-color: #f0f2f5;
-    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    align-items: center; /* This centers the container vertically */
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    font-family: sans-serif;
 }
 
 h1 {
@@ -15,24 +14,27 @@ h1 {
 }
 
 
-.card {
-    /* Use a percentage so it shrinks on small screens */
-    width: 85%; 
-    
-    /* Set a limit so it doesn't get awkwardly huge on a desktop */
-    max-width: 380px; 
-    
-    padding: 2rem;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
-    /* This ensures the card stays centered */
+/* The Container holds the cards */
+.container {
     display: flex;
-    flex-direction: column; /* Stack elements on top of each other */
-    align-items: center;    /* Center them horizontally */
-    margin: 20px auto; 
-    text-align: center; /* This centers the H1, P, and the Button */
+    flex-wrap: wrap;      /* This is the key: it lets cards "wrap" to the next line on phones */
+    justify-content: center; 
+    gap: 20px;            /* Adds a clean space between the cards */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Ensure the cards have room to grow and shrink */
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    
+    /* Flex-basis means "start at 300px wide" */
+    flex: 1 1 300px; 
+    max-width: 400px;
 }
 
 button {
