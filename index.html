@@ -11,17 +11,20 @@
 </head>
 <body>
     <div class="container">
-    <div class="card">
-        <h1>Project One</h1>
-        <p>This is my first project card.</p>
-        <button>View Project</button>
-    </div>
-
-    <div class="card">
-        <h1>Project Two</h1>
-        <p>This is my second project card.</p>
-        <button>View Project</button>
-    </div>
+        <div class="card-container">
+            <div class="card-flipper">
+                <div class="card-front">
+                    <h1>Project One</h1>
+                    <p>Click to see the back!</p>
+                    <button class="flip-btn">Flip Me</button>
+                </div>
+                <div class="card-back">
+                    <h1>The Secret</h1>
+                    <p>You found the back of the card!</p>
+                    <button class="flip-btn">Back to Front</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

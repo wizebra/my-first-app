@@ -1,5 +1,5 @@
 // This "grabs" all buttons on the page
-const buttons = document.querySelectorAll('button');
+/*const buttons = document.querySelectorAll('button');
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -14,5 +14,16 @@ buttons.forEach((btn) => {
         
         // Change the button text
         btn.innerText = "Color Changed!";
+    });
+});*/
+const buttons = document.querySelectorAll('.flip-btn');
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        // Find the flipper element
+        const flipper = btn.closest('.card-flipper');
+        
+        // Toggle the 'is-flipped' class
+        flipper.classList.toggle('is-flipped');
     });
 });
