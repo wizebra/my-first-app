@@ -1,87 +1,55 @@
+/* 1. Layout & Centering */
 body {
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center; /* This centers the container vertically */
+    align-items: center;
     min-height: 100vh;
     background-color: #f0f4f8;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-h1 {
-    color: #1a1a1a;
-    letter-spacing: -0.02em; /* Makes modern fonts look "tighter" */
-}
-
-
-/* The Container holds the cards */
 .container {
     display: flex;
-    flex-wrap: wrap;      /* This is the key: it lets cards "wrap" to the next line on phones */
-    justify-content: center; 
-    gap: 20px;            /* Adds a clean space between the cards */
-    padding: 20px;
-    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
 }
 
-/* Ensure the cards have room to grow and shrink */
-.card {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    
-    /* Flex-basis means "start at 300px wide" */
-    flex: 1 1 300px; 
-    max-width: 400px;
-}
-
-button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    
-    /* 1. The Secret Sauce: This makes the change smooth, not jerky */
-    transition: all 0.3s ease;
-}
-
-/* The outer box that holds the 3D space */
+/* 2. 3D Flip Stage */
 .card-container {
-    width: 300px;
-    height: 400px;
-    perspective: 1000px; /* Gives the "depth" effect */
+    width: 320px;
+    height: 420px;
+    perspective: 1000px; /* Essential for 3D depth */
 }
 
-/* The actual "flipper" that rotates */
 .card-flipper {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d; /* Allows children to live in 3D space */
 }
 
-/* This class will be added by JavaScript to flip it */
+/* This is the class our JS will toggle */
 .is-flipped {
     transform: rotateY(180deg);
 }
 
-/* Styles for both sides */
+/* 3. Front & Back Common Styles */
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hides the other side when flipped */
+    backface-visibility: hidden; /* Hides the reverse side */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
@@ -92,43 +60,47 @@ button {
 .card-back {
     background: #3182ce;
     color: white;
-    transform: rotateY(180deg); /* Pre-rotate the back side */
+    transform: rotateY(180deg); /* Starts pre-rotated */
+}
+
+/* 4. Form & Button Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+button {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-    /* 2. Move it up 3 pixels */
-    transform: translateY(-3px);
-    
-    /* 3. Add a glowing shadow that matches the button color */
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
-    
-    /* 4. Make the blue slightly more vibrant */
-    background-color: #1d4ed8;
+    background-color: #1a365d;
+    transform: scale(1.05);
 }
 
-/* This only triggers if the screen is 600px wide or smaller */
-@media (max-width: 600px) {
-    body {
-        background-color: #ff9a9e; /* Changes background to a soft red/pink */
-    }
-
-    .card {
-        padding: 1.5rem; /* Slightly less padding to save space on small screens */
-        border-radius: 0; /* Maybe you want square corners on mobile? */
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Shrinks the text so it doesn't wrap awkwardly */
-    }
-}
-
-@media (max-width: 500px) {
-    .card {
-        border: 4px solid #3498db; /* Adds a blue border ONLY on small screens */
-    }
-    
-    p {
-        color: #2c3e50;
-        font-weight: bold;
-    }
+.secondary {
+    background: transparent;
+    border: 1px solid white;
+    margin-top: 15px;
 }

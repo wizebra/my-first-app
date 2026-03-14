@@ -3,30 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>3D Interactive Portfolio</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
+        
         <div class="card-container">
             <div class="card-flipper">
+                
                 <div class="card-front">
                     <h1>Project One</h1>
-                    <p>Click to see the back!</p>
-                    <button class="flip-btn">Flip Me</button>
+                    <p>A professional 3D interactive card. Click below to see the back.</p>
+                    <button class="flip-btn">Flip to Contact</button>
                 </div>
+
                 <div class="card-back">
-                    <h1>The Secret</h1>
-                    <p>You found the back of the card!</p>
-                    <button class="flip-btn">Back to Front</button>
+                    <h3>Send a Message</h3>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <textarea placeholder="Your Message" rows="3"></textarea>
+                        <button type="submit" class="send-btn">Send Now</button>
+                    </form>
+                    <button class="flip-btn secondary">Go Back</button>
                 </div>
+
             </div>
         </div>
+
+        <div class="card-container">
+            <div class="card-flipper">
+                
+                <div class="card-front">
+                    <h1>Project Two</h1>
+                    <p>Another project showcasing your web development skills.</p>
+                    <button class="flip-btn">Flip for Info</button>
+                </div>
+
+                <div class="card-back">
+                    <h3>Project Details</h3>
+                    <p>Built with HTML, CSS, and JavaScript.</p>
+                    <p>Hosted on Vercel.</p>
+                    <button class="flip-btn secondary">Go Back</button>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+
     <script src="script.js"></script>
-</body>
 </body>
 </html>

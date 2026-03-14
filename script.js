@@ -1,29 +1,18 @@
-// This "grabs" all buttons on the page
-/*const buttons = document.querySelectorAll('button');
+const flipButtons = document.querySelectorAll('.flip-btn');
 
-buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        // Find the specific card that this button belongs to
-        const card = btn.closest('.card');
-        
-        // Generate a random color
-        const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        
-        // Change the background of ONLY that specific card
-        card.style.backgroundColor = "#" + randomColor;
-        
-        // Change the button text
-        btn.innerText = "Color Changed!";
-    });
-});*/
-const buttons = document.querySelectorAll('.flip-btn');
-
-buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        // Find the flipper element
+flipButtons.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        // Find the flipper for the specific card this button belongs to
         const flipper = btn.closest('.card-flipper');
         
-        // Toggle the 'is-flipped' class
+        // Flip the card!
         flipper.classList.toggle('is-flipped');
     });
+});
+
+// Optional: Logic for the 'Send Now' button
+const contactForm = document.querySelector('.contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("Message simulation sent! In a real app, this would go to your email.");
 });
