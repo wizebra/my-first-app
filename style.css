@@ -5,8 +5,29 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f4f8;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* 1. Create a colorful gradient */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    
+    /* 2. Make the background huge so we can move it */
+    background-size: 400% 400%;
+    
+    /* 3. Start the animation: 15 seconds, infinite loop */
+    animation: gradientBG 15s ease infinite;
+}
+
+/* 4. Define the movement logic */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -51,6 +72,14 @@ body {
     padding: 2rem;
     box-sizing: border-box;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+    /* semi-transparent white */
+    background: rgba(255, 255, 255, 0.85); 
+    
+    /* Blurs the moving background behind the card */
+    backdrop-filter: blur(10px); 
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card-front {
