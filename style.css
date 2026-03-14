@@ -28,17 +28,35 @@ h1 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     
     /* This ensures the card stays centered */
+    display: flex;
+    flex-direction: column; /* Stack elements on top of each other */
+    align-items: center;    /* Center them horizontally */
     margin: 20px auto; 
     text-align: center; /* This centers the H1, P, and the Button */
 }
 
 button {
-    background-color: #807bf0;
+    background-color: #2563eb;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
+    
+    /* 1. The Secret Sauce: This makes the change smooth, not jerky */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    /* 2. Move it up 3 pixels */
+    transform: translateY(-3px);
+    
+    /* 3. Add a glowing shadow that matches the button color */
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+    
+    /* 4. Make the blue slightly more vibrant */
+    background-color: #1d4ed8;
 }
 
 /* This only triggers if the screen is 600px wide or smaller */
